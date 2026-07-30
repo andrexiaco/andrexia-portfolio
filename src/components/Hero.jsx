@@ -1,4 +1,6 @@
+import { useState } from 'react';
 function Hero() {
+    const [profileImage, setProfileImage] = useState('/profile.jpg');
     return (
         <section id="home" className="hero">
 
@@ -98,10 +100,14 @@ function Hero() {
 
                     {/* Profile Image */}
 
-                    <div className="profile-frame">
+                    <div
+                        className="profile-frame"
+                        onMouseEnter={() => setProfileImage('/profile2.jpg')}
+                        onMouseLeave={() => setProfileImage('/profile.jpg')}
+                    >
 
                         <img
-                            src="/profile.jpg"
+                            src={profileImage}
                             alt="Ronnell Andrei"
                         />
 
